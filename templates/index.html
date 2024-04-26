@@ -1,0 +1,120 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Apr 26 11:31:30 2024
+
+@author: user
+"""
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+  <style>
+    /* CSS code for button */
+    body {
+      background-image: url('wp8003033.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Show Hospital Readmission Prediction Model-->
+  <div>
+    <img src="th.png" class="w3-border w3-padding" alt="Hospital Readmission Model" style="width:100%">
+  </div>
+ 
+ 
+ <div class="login">
+	
+    <!-- Get input for predict the cancer -->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        <h1>Enter the value of patint medidation count  and all >>></h1>
+        
+    	<input type="text" name="gender" placeholder="gender" required="required" />
+        <input type="text" name="age" placeholder="age" required="required" />
+		<input type="text" name="admission_type_id" placeholder="admission type id " required="required" />
+		<input type="text" name="num_lab_procedures" placeholder="num lab procedures" required="required" />
+        <input type="text" name="num_procedures" placeholder="num procedures" required="required" />
+		<input type="text" name="time_in_hospital" placeholder="time in hospital" required="required" />
+		<br>
+    	<input type="text" name="num_medications" placeholder="num medications" required="required" />
+        <input type="text" name="diag_1" placeholder="diag 1" required="required" />
+		<input type="text" name="diag_2" placeholder="diag 2" required="required" />
+    	<input type="text" name="diag_3" placeholder="diag 3" required="required" />
+        <input type="text" name="number_diagnoses" placeholder="number diagnoses" required="required" />
+		<input type="text" name="max_glu_serum" placeholder="max glu serum" required="required" />
+		<br>
+    	<input type="text" name="A1Cresult" placeholder="A1Cresult " required="required" />
+        <input type="text" name="metformin" placeholder="metforminr " required="required" />
+		<input type="text" name="repaglinide" placeholder="repaglinide" required="required" />
+    	<input type="text" name="nateglinide" placeholder="nateglinide" required="required" />
+        <input type="text" name="chlorpropamide" placeholder="chlorpropamider" required="required" />
+		<input type="text" name="glimepiride" placeholder="glimepiride" required="required" />
+    	<br>
+    	<input type="text" name="acetohexamide" placeholder="acetohexamide" required="required" />
+        <input type="text" name="glipizide" placeholder="glipizide" required="required" />
+		<input type="text" name="glyburide" placeholder="glyburide" required="required" />
+    	<input type="text" name="tolbutamide" placeholder="tolbutamide" required="required" />
+        <input type="text" name="tolazamide" placeholder="tolazamide" required="required" />
+		<input type="text" name="insulin" placeholder="insulin" required="required" />
+		<br>
+    	<input type="text" name="glyburide-metformin" placeholder="glyburide-metformin" required="required" />
+        <input type="text" name="glipizide-metformin" placeholder="glipizide-metformin" required="required" />
+		<input type="text" name="glimepiride-pioglitazone" placeholder="glimepiride-pioglitazone" required="required" />
+    	<input type="text" name="metformin-rosiglitazone" placeholder="metformin-rosiglitazone" required="required" />
+        <input type="text" name="metformin-pioglitazone" placeholder="metformin-pioglitazone" required="required" />
+		<input type="text" name="change" placeholder="change" required="required" />
+        <br>
+    	<input type="text" name="diabetesMed" placeholder="diabetesMed" required="required" />
+    	<input type="text" name="service_utilization" placeholder="service_utilization" required="required" />
+        <br>
+        
+        <br>
+        <br>
+        
+        <!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css" href="https://colab.research.google.com/drive/1AkHQZGQQzfIbk2PAaThY-LDcD5Rpl_8q?usp=sharing" target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict readmitted</strong></button></a>
+        </div>
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h1>{{ prediction_text }}</h1>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>
